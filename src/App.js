@@ -1,9 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Counter } from "./features/counter/Counter";
+import "./App.css";
+import { useGetPokemonByNameQuery } from "./features/api/pokemonApi";
 
 function App() {
+  const { data, isFetching } = useGetPokemonByNameQuery("bulbasaur");
+  console.log(isFetching);
+  console.log(data);
   return (
     <div className="App">
       <header className="App-header">
